@@ -1,0 +1,7 @@
+<h1>Resend request {{ reqnum }}</h1>
+<form action="submit{{ reqnum }}.html" method="POST">
+	{% for param in params %}
+	<input type="text" name="param{{ loop.index0 }}" value="{{ param.values[0] }}" />
+	{% endfor %}
+	<input type="submit" />
+</form>

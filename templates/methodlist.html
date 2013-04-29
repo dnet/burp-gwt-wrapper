@@ -1,0 +1,11 @@
+<h1>Choose a method</h1>
+<ul>
+	{% for class_name, method_list in methods | dictsort %}
+	<li>{{ class_name }}
+	<ul>
+		{% for method_name, n in method_list | dictsort %}
+		<li><a href="form{{ n }}.html">{{ method_name }}</a> (request {{ n }})</li>
+		{% endfor %}
+	</ul>
+	{% endfor %}
+</ul>
