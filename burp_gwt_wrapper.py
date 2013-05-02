@@ -41,7 +41,7 @@ class BurpXml(object):
 		retval = defaultdict(dict)
 		for n, item in enumerate(self.items):
 			_, data = item2request(item)
-			m = re.search(r'service\.([A-Za-z0-9]+)\|([A-Za-z0-9]+)\|', data)
+			m = re.search(r'[A-Za-z0-9]+\.([A-Za-z0-9]+)\|([A-Za-z0-9]+)\|', data)
 			retval[m.group(1)][m.group(2)] = n
 		return retval
 
